@@ -4,5 +4,5 @@
    tasks:
     - name: copy the file
       copy:
-        src: /home/ansadm/playbooks/sample.yml
+        src: /home/ansadm/playbook/sample.yml
         dest: /home/ansadm/sample.yml
