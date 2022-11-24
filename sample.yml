@@ -2,8 +2,10 @@
  - hosts: appservers
    gather_facts: yes
    tasks:
+    - name: create a file
+      shell: touch test1
     - name: copy the file
       copy:
-        src: /home/ansadm/playbook/sample.yml
-        dest: /home/ansadm/sample.yml
+        dest: /home/ansadm/playbook/test1
+        src: /home/ansadm/test
         remote_src: yes
