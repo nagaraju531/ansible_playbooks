@@ -3,9 +3,11 @@
    gather_facts: yes
    tasks:
     - name: create a file
-      shell: touch test1
+      file:
+        path: /home/ansadm/playbook/testserver
+        state: touch
     - name: copy the file
       copy:
-        dest: /home/ansadm/playbook/test1
-        src: /home/ansadm/test
+        dest: /home/ansadm/playbook/testserver
+        src: /home/ansadm/testserver
         remote_src: yes
