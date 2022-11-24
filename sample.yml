@@ -6,3 +6,4 @@
       copy:
         src: /home/ansadm/playbook/sample.yml
         dest: /home/ansadm/sample.yml
+        remote_src: yes
