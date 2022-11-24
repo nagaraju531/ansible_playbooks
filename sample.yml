@@ -1,0 +1,9 @@
+---
+ - hosts: appservers
+   become: yes
+   gather_facts: yes
+   tasks:
+    - name: copy the file
+      copy:
+        src: /home/ansadm/playbooks/sample.yml
+        dest: /home/ansadm/sample.yml
