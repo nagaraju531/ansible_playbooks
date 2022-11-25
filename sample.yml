@@ -4,10 +4,10 @@
    tasks:
     - name: create a file
       file:
-        path: /home/ansadm/playbook/testserver2
+        path: /home/ansadm/playbook/testserver4
         state: touch
     - name: copy the file
       copy:
-        src: /home/ansadm/playbook/testserver2
+        src: /home/ansadm/playbook/testserver4
         dest: /home/ansadm/
         remote_src: yes
