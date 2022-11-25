@@ -1,0 +1,7 @@
+---
+ - hosts: appservers
+   gather_facts: yes
+   tasks:
+     - name: Testing the file
+       include_role: testing
+

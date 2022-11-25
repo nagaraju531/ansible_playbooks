@@ -1,0 +1,11 @@
+---
+   tasks:
+    - name: create a file
+      file:
+        path: /home/ansadm/playbook/testserver5
+        state: touch
+    - name: copy the file
+      copy:
+        src: /home/ansadm/playbook/testserver5
+        dest: /home/ansadm/
+        remote_src: yes
