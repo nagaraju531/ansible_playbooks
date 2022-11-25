@@ -1,6 +1,0 @@
----
- - hosts: appservers
-   gather_facts: yes
-   tasks:
-    - name: list of the files
-      shell: ls -ltr
