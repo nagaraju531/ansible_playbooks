@@ -1,0 +1,11 @@
+---
+- name: Upload Vars files
+  include_vars: "roles/debug-api/vars/main.yml"
+
+- name: First Debug
+  debug:
+   msg: "This is the First Debug Task {{ first_debug }}"
+
+- name: Second Debug
+  debug:
+   msg: "This is the second Debug Task {{ second_debug }}"
