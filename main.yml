@@ -1,6 +1,7 @@
 ---
- - hosts: devhost
+ - hosts: localhost
    gather_facts: yes
+   connection: local
    tasks:
      - name: Testing the file
        include_role:
