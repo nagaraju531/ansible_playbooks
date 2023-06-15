@@ -1,5 +1,5 @@
 ---
- - hosts: appservers
+ - hosts: devhost
    gather_facts: yes
    tasks:
      - name: Testing the file
