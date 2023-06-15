@@ -1,6 +1,6 @@
 ---
    tasks:
-    - name: create a file
+    - name: create a file1
       file:
         path: /home/ansadm/playbook/testserver5
         state: touch
