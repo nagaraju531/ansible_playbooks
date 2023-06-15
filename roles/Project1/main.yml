@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  gather_facts: yes
+  tasks:
+    - name: First Debug Task
+      debug:
+        msg: "This is the first roles"

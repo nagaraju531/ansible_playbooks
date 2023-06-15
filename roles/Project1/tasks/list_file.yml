@@ -1,0 +1,4 @@
+---
+  tasks:
+   - name: list of the files
+     shell: ls -ltr
