@@ -10,4 +10,8 @@
   debug:
    msg: "This is the second Debug Task {{ second_debug }}"
 
+- name: End of the Playbook
+  debug:
+   msg: "End of the playbook"
+
 ...
