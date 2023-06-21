@@ -13,7 +13,7 @@
     Content-Type: "application/json"
     Accept: "*/*"
    status_code: 200
-  register: api_result
+  register: store_result
  # until: api_result.json.status == "200"
   #retries: 5
   #delay: 10
@@ -21,7 +21,7 @@
 
 - name: Display the result
   debug:
-    var: api_result
+    var: store_result
 
 #- name: Set facts
  # set_fact:
