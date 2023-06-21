@@ -1,0 +1,28 @@
+---
+- name: Include Vars files
+  include_vars: "roles/debug-api/vars/dev_api.yml"
+
+- name: Fetch the API information
+  uri:
+   url: "http://restapi.adequateshop.com/api/users?page=1"
+   method: GET
+   body_format: json
+   return_content: yes
+   headers:
+    Authorization: "{{ api_token }}"
+    Content-Type: "application/json"
+    Accept: "*/*"
+   status_code: 200
+  register: api_result
+ # until: api_result.json.status == "200"
+  #retries: 5
+  #delay: 10
+ # no_log: False
+
+- name: Display the result
+  debug:
+    var: api_result
+
+#- name: Set facts
+ # set_fact:
+  #  jsondata: "{{ var }}"
