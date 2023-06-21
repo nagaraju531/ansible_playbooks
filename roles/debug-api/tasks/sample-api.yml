@@ -1,6 +1,7 @@
 ---
 - name: Include Vars files
   include_vars: "roles/debug-api/vars/dev_api.yml"
+  no_log: true
 
 - name: Fetch the API information
   uri:
@@ -17,12 +18,16 @@
  # until: api_result.json.status == "200"
   #retries: 5
   #delay: 10
- # no_log: False
+  no_log: True
 
 - name: Display the result
   debug:
-    var: store_result
+    var: store_result.json
 
-#- name: Set facts
- # set_fact:
-  #  jsondata: "{{ var }}"
+- name: Set facts
+  set_fact:
+    jsondata: "{{ store_result.json }}"
+
+- name: Fetch the email
+  set_fact:
+    emailid: "{{ jsondata.data[0].email }}"
