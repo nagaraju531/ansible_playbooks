@@ -35,7 +35,7 @@
 - name: Fetch the email
   set_fact:
     #loopsnums: "{{ item }}"
-    emailid: "{{ email_list|default([]) + jsondata.data[item].email }}"
+    emailid: "{{ email_list|default([]) + [jsondata.data[item].email] }}"
   with_items: [1,2,3]
 
 - name: Print the Email-ids
