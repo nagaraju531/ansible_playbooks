@@ -28,9 +28,9 @@
   set_fact:
     jsondata: "{{ store_result.json }}"
 
-- name: Creating Empty List
-  set_fact:
-    email_list: []
+#- name: Creating Empty List
+ # set_fact:
+  #  email_list: []
 
 - name: Fetch the email
   set_fact:
