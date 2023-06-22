@@ -1,6 +1,6 @@
 ---
  - hosts: mygroup
-   gather_facts: yes
+   gather_facts: no
    connection: local
    tasks:
      - name: Testing the file
