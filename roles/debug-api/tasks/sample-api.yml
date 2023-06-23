@@ -39,9 +39,9 @@
 - name: Get Together
   set_fact:
     name_email_resut: "{{ item.0 + item.1 }}"
-    with_together:
-      - email_result
-      - name_result
+  with_together:
+    - email_result
+    - name_result
 
 - name: Print the Email-ids
   debug:
