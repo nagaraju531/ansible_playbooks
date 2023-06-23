@@ -44,4 +44,4 @@
 
 - name: Print the Email-ids
   debug:
-    msg: var=emailid
+    var: emailid
