@@ -15,6 +15,7 @@
     Accept: "*/*"
    status_code: 200
   register: store_result
+  no_log: True
 
 - name: Display the result
   debug:
