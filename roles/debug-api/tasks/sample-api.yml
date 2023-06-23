@@ -40,7 +40,7 @@
    - name: Adde Email Address
      set_fact:
       email_list: "{{ email_list|default([]) + [emailid] }}"
-  with_items: [0,1,2]
+  loop: [0,1,2]
 
 - name: Add Emails
   set_fact:
