@@ -15,10 +15,6 @@
     Accept: "*/*"
    status_code: 200
   register: store_result
- # until: api_result.json.status == "200"
-  #retries: 5
-  #delay: 10
-  no_log: True
 
 - name: Display the result
   debug:
@@ -30,19 +26,12 @@
 
 - name: Fetch The Email
   set_fact:
-    #emailid: "{{ jsondata.data[item].email }}"
-   # display_result: "{{ emailid }}"
     email_list: "{{ email_list|default([]) + [item.email] }}"
   loop: "{{ jsondata.data }}"
-  #with_sequence: start=0 end=5
 
 - name: Display the result emailid
   set_fact:
     email_result: "{{ email_list }}"
-
-#- name: Add Emails
- # set_fact:
-  # email_list1: "{{ email_list|default([]) + [emailid] }}"
 
 - name: Print the Email-ids
   debug:

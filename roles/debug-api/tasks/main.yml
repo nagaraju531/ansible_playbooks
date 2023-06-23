@@ -12,6 +12,7 @@
 
 - name: Include Tasks
   include_tasks: sample-api.yml
+  loop: [1,2,3]
 
 - name: End of the Playbook
   debug:
