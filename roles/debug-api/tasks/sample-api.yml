@@ -28,15 +28,17 @@
   set_fact:
     jsondata: "{{ store_result.json }}"
 
-#- name: Creating Empty List
- # set_fact:
-  #  email_list: []
-
 - name: Fetch The Email
   set_fact:
-    emailid: "{{ jsondata.data[item].email }}"
-    email_list: "{{ email_list|default([]) + emailid }}"
-  loop: [0,1,2]
+    #emailid: "{{ jsondata.data[item].email }}"
+   # display_result: "{{ emailid }}"
+    email_list: "{{ email_list|default([]) + [item.email] }}"
+  loop: "{{ jsondata.data }}"
+  #with_sequence: start=0 end=5
+
+- name: Display the result emailid
+  set_fact:
+    email_result: "{{ email_list }}"
 
 #- name: Add Emails
  # set_fact:
