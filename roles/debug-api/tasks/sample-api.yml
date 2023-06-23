@@ -35,7 +35,7 @@
 - name: Fetch The Email
   set_fact:
     emailid: "{{ jsondata.data[item].email }}"
-    email_list: "{{ email_list|default([]) + 'Raju' }}"
+    email_list: "{{ email_list|default([]) + ['Raju'] }}"
   loop: [0,1,2]
 
 - name: Add Emails
