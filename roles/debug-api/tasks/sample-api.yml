@@ -38,8 +38,8 @@
 
 - name: Get Together
   set_fact:
-    name_email_resut: "{{ item.0 + item.1 }}"
-  with_together:
+    name_email_resut: "{{ item.0 }} - {{ item.1 }}"
+  with_nested:
     - "{{ email_result }}"
     - "{{ name_result }}"
 
