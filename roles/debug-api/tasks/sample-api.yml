@@ -42,6 +42,6 @@
  # set_fact:
   # email_list1: "{{ email_list|default([]) + [emailid] }}"
 
-#- name: Print the Email-ids
- # debug:
+- name: Print the Email-ids
+  debug:
     msg: var=emailid
