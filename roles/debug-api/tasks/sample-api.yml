@@ -32,14 +32,10 @@
  # set_fact:
   #  email_list: []
 
-- name: Fetch the email and Add Email Address
-  block:
-   - name: Fetch The Email
-     set_fact:
-      emailid: "{{ jsondata.data[item].email }}"
-   - name: Adde Email Address
-     set_fact:
-      email_list: "{{ email_list|default([]) + [emailid] }}"
+- name: Fetch The Email
+  set_fact:
+    emailid: "{{ jsondata.data[item].email }}"
+    email_list: "{{ email_list|default([]) + 'Raju' }}"
   loop: [0,1,2]
 
 - name: Add Emails
