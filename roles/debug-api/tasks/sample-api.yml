@@ -28,12 +28,21 @@
 - name: Fetch The Email
   set_fact:
     email_list: "{{ email_list|default([]) + [item.email] }}"
+    name_list: "{{ name_list|default([]) + [item.name]}}"
   loop: "{{ jsondata.data }}"
 
 - name: Display the result emailid
   set_fact:
     email_result: "{{ email_list }}"
+    name_result: "{{ name_list }}"
+
+- name: Get Together
+  set_fact:
+    name_email_resut: "{{ item.0 + item.1 }}"
+    with_together:
+      - email_result
+      - name_result
 
 - name: Print the Email-ids
   debug:
-    var: email_list
+    var: name_email_result
