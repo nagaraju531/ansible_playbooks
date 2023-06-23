@@ -12,7 +12,7 @@
 
 - name: Include Tasks
   include_tasks: sample-api.yml
-  loop: [1..10]
+  loop: "{{ range(1,10)|list }}"
 
 - name: End of the Playbook
   debug:
